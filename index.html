@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Deposite</title>
+</head>
+<body>
+    <form action="#">
+        <h3>Онлайн-калькулятор</h3>
+        <!-- proc -->
+        <div class="stavka">
+            <span>Ставка:</span> 
+            <p><input type="radio" name="stavka" value="10" id="proc-1">Долгосрочный 10%</p>
+            <p><input type="radio" name="stavka" value="12" id="proc-2">Стандарт 12%</p>
+            <p><input type="radio" name="stavka" value="15" id="proc-3">Супер 15%</p>
+        </div>
+        <!-- t -->
+        <div class="srok">
+            <span>Срок:</span>
+            <input type="number" id="srok-time">
+        </div><br>
+        <!-- s -->
+        <div class="summa">
+            <span>Сумма:</span>
+            <input type="number" id="s-summa">
+        </div><br>
+        <div class="nalog">
+            <span>Налог:</span><br><br>
+            <input type="checkbox" name="uchet" id="uchet" value="0.195">
+            <label for="uchet">С учётом</label>
+        </div><br>
+        <div class="raschet">
+            <button onclick="depositraschet(event)">Рассчёт</button>
+            <p>Вложил: <span id="out-vklad"></span>грн</p>
+            <p>Получил: <span id="out-poluchil"></span>грн</p>
+        </div>
+    </form>
+
+    <script src="calculate.js"></script>
+</body>
+</html>
