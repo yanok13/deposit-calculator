@@ -1,5 +1,4 @@
-function depositraschet(event) {
-  event.preventDefault();
+function calc() {
 
   var proc = parseInt(document.querySelector("input[name=stavka]:checked").value);
 
@@ -22,6 +21,9 @@ function depositraschet(event) {
 
   dohod = dohod + s;
 
-  document.getElementById("out-vklad").innerHTML = s;
-  document.getElementById("out-poluchil").innerHTML = dohod;
-}
+  if (!isNaN(s) && !isNaN(dohod)) {
+    document.getElementById("out-vklad").innerHTML = s;
+    document.getElementById("out-poluchil").innerHTML = dohod;
+  }
+}  
+
