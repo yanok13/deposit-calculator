@@ -1,0 +1,22 @@
+body {
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: black;
+    background-color: #ffffff;
+}
+
+h3 {
+    font-size: 24px;
+    color: #0e6191de;
+}
+
+.container {
+    padding: 0 calc(50% - 590px);
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+}
+
+

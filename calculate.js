@@ -22,8 +22,8 @@ function calc() {
   dohod = dohod + s;
 
   if (!isNaN(s) && !isNaN(dohod)) {
-    document.getElementById("out-vklad").innerHTML = s;
-    document.getElementById("out-poluchil").innerHTML = dohod;
+    document.getElementById("out-vklad").innerHTML = s + " ";
+    document.getElementById("out-poluchil").innerHTML = dohod + " ";
   }
 }  
 
