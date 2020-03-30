@@ -3,49 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculate Deposite</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Депозитный онлайн-калькулятор</title>
   </head>
   <body>
-    <form action="#" oninput="calc()">
-      <h3>Онлайн-калькулятор</h3>
+    <form action="#" oninput="calc()" class="container form-contain">
+      <h3>Депозитный онлайн-калькулятор</h3>
       <!-- proc -->
       <div class="stavka">
-        <span>Ставка:</span>
-        <p>
-          <input type="radio" name="stavka" value="10" id="proc-1" checked/>Долгосрочный 10%
+        <label>Ставка:</label>
+        <p class="inpRadio">
+          <input type="radio" name="stavka" value="10" id="proc-1" class="radio" checked/>
+          <label for="proc-1">Долгосрочный 10%</label>
         </p>
-        <p>
-          <input type="radio" name="stavka" value="12" id="proc-2"/>Стандарт
-          12%
+        <p class="inpRadio">
+          <input type="radio" name="stavka" value="12" id="proc-2" class="radio"/>
+          <label for="proc-2">Стандарт 12%</label>
         </p>
-        <p>
-          <input type="radio" name="stavka" value="15" id="proc-3"/>Супер 15%
+        <p class="inpRadio">
+          <input type="radio" name="stavka" value="15" id="proc-3" class="radio"/>
+          <label for="proc-3">Супер 15%</label>
         </p>
       </div>
       <!-- t -->
       <div class="srok">
-        <span>Срок:</span>
+        <label>Срок:</label>
         <input type="number" id="srok-time"/>
       </div>
       <br />
       <!-- s -->
       <div class="summa">
-        <span>Сумма:</span>
+        <label>Сумма:</label>
         <input type="number" id="s-summa"/>
       </div>
       <br />
       <!-- s uchetom naloga -->
       <div class="nalog">
-        <span>Налог:</span><br /><br />
-        <input type="checkbox" name="uchet" id="uchet" value="0.195"/>
+        <p><span>Налог:</span></p>
+        <input type="checkbox" name="uchet" id="uchet" value="0.195" class="checkbox"/>
         <label for="uchet">С учётом</label>
       </div>
       <div class="raschet">
-        <p>Вложил: <span id="out-vklad"></span>грн</p>
-        <p>Получил: <span id="out-poluchil"></span>грн</p>
+        <p>Вложил: <span id="out-vklad">0 грн</span></p>
+        <p>Получил: <span id="out-poluchil">0 грн</span></p>
       </div>
     </form>
 
     <script src="calculate.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>
