@@ -22,8 +22,8 @@ function calc() {
   dohod = dohod + s;
 
   if (!isNaN(s) && !isNaN(dohod)) {
-    document.getElementById("out-vklad").innerHTML = s + " " + "грн";
-    document.getElementById("out-poluchil").innerHTML = dohod + " " + "грн";
+    document.getElementById("out-vklad").innerHTML = s + " грн";
+    document.getElementById("out-poluchil").innerHTML = dohod + " грн";
   }
 }  
 
