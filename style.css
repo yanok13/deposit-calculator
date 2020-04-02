@@ -3,11 +3,13 @@ body {
   font-size: 16px;
   line-height: 150%;
   color: #000000;
-  background: url("img/flower.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: linear-gradient(to bottom, #e8e7e5, #ecebe7);
+}
+
+img.flower-clear {
+  position: absolute; 
+  bottom: 0; 
+  right: 0;
 }
 
 h3 {
@@ -15,13 +17,14 @@ h3 {
 }
 
 .form-contain {
-  /* padding: 0 calc(50% - 590px); */
+  position: relative;
+  z-index: 10;
   border: 1px solid #a1a0a0;
   border-radius: 12px;
   background-color: #f8f8f8;
   box-shadow: 0 0 10px #a1a0a0;
   width: max-content;
-  margin-top: 40px;
+  margin-top: 50px;
   padding: 20px 50px;
 }
 
