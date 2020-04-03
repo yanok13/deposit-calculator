@@ -1,6 +1,7 @@
 function calc() {
-
-  var proc = parseInt(document.querySelector("input[name=stavka]:checked").value);
+  var checkProcElem = document.querySelector("input[name=stavka]:checked");
+  var proc = parseInt(checkProcElem.value);
+  var calcNalog = checkProcElem.dataset.calcNalog;
 
   var s = document.getElementById("s-summa").value;
   s = parseFloat(s);
@@ -12,7 +13,7 @@ function calc() {
   
   var nalog = document.querySelector("input[name=uchet]:checked");
   
-  if (nalog != null) {
+  if (nalog != null && calcNalog == "1") {
     nalog = nalog.value;
     nalog = parseFloat(nalog);
     nalog = nalog * dohod;
