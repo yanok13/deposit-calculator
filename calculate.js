@@ -11,8 +11,9 @@ function calc() {
   var dohod = s * ((proc / (12 * 100)) * t);
   
   var nalog = document.querySelector("input[name=uchet]:checked");
+  var noPercent = document.getElementById('proc-4').checked;
   
-  if (nalog != null) {
+  if ((nalog != null) && (noPercent == false)) {
     nalog = nalog.value;
     nalog = parseFloat(nalog);
     nalog = nalog * dohod;
