@@ -9,6 +9,17 @@ function calc() {
   var t = document.getElementById("srok-time").value;
   t = parseInt(t);
 
+  var mr = document.getElementById("mr-mounth-replenishment").value;
+  mr = parseFloat(mr);
+
+  var mounthRep = 0;
+  if (!isNaN(mr)) {
+    for (var i = 0; i < t; i++) {
+      mounthRep = mounthRep + mr;
+    }
+    s = mounthRep + s;
+  }
+  
   var dohod = s * ((proc / (12 * 100)) * t);
   
   var nalog = document.querySelector("input[name=uchet]:checked");
