@@ -13,15 +13,18 @@ function calc() {
   mr = parseFloat(mr);
 
   var mounthRep = 0;
+  var dohod = 0;
+
   if (!isNaN(mr)) {
     for (var i = 0; i < t; i++) {
-      mounthRep = mounthRep + mr;
+      mounthRep += mr; 
+      dohod += (s + mounthRep) * (proc / (12 * 100));
     }
-    s = mounthRep + s;
+    s = s + mounthRep;
+  } else {
+    dohod = s * ((proc / (12 * 100)) * t);
   }
-  
-  var dohod = s * ((proc / (12 * 100)) * t);
-  
+
   var nalog = document.querySelector("input[name=uchet]:checked");
   
   if (nalog != null && calcNalog == "1") {
@@ -31,11 +34,9 @@ function calc() {
     dohod = dohod - nalog;
   }
 
-  dohod = dohod + s;
-
   if (!isNaN(s) && !isNaN(dohod)) {
     document.getElementById("out-vklad").innerHTML = s + " грн";
-    document.getElementById("out-poluchil").innerHTML = dohod + " грн";
+    document.getElementById("out-poluchil").innerHTML = dohod + s + " грн";
   }
 }  
 
