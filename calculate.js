@@ -8,6 +8,10 @@ function calc() {
 
   var t = document.getElementById("srok-time").value;
   t = parseInt(t);
+  
+  if (!(t >= 1 && t <= 120)) {
+    return;
+  }
 
   var mr = document.getElementById("mr-mounth-replenishment").value;
   mr = parseFloat(mr);
@@ -15,16 +19,14 @@ function calc() {
   var mounthRep = 0;
   var dohod = 0;
 
-  if (t >= 1 && t <= 120) {
-    if (!isNaN(mr)) {
-      for (var i = 0; i < t; i++) {
-        mounthRep += mr;
-        dohod += (s + mounthRep) * (proc / (12 * 100));
-      }
-      s = s + mounthRep;
-    } else {
-      dohod = s * ((proc / (12 * 100)) * t);
+  if (!isNaN(mr)) {
+    for (var i = 0; i < t; i++) {
+      mounthRep += mr;
+      dohod += (s + mounthRep) * (proc / (12 * 100));
     }
+    s = s + mounthRep;
+  } else {
+    dohod = s * ((proc / (12 * 100)) * t);
   }
 
   var nalog = document.querySelector("input[name=uchet]:checked");
