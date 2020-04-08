@@ -9,7 +9,7 @@ function calc() {
   var srok = document.getElementById("srok-time").value;
   srok = parseInt(srok);
 
-  if (!(srok >= 1 && srok <= 120)) {
+  if (srok <= 1 || srok >= 120) {
     return;
   }
 
@@ -32,8 +32,8 @@ function calc() {
   if (nalog != null && calcNalog == "1") {
     nalog = nalog.value;
     nalog = parseFloat(nalog);
-    nalog = nalog * dohod;
-    dohod = dohod - nalog;
+    nalog *= dohod;
+    dohod -= nalog;
   }
 
   if (!isNaN(summaVklada) && !isNaN(dohod)) {
