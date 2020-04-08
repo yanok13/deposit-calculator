@@ -3,28 +3,40 @@ function calc() {
   var proc = parseInt(checkProcElem.value);
   var calcNalog = checkProcElem.dataset.calcNalog;
 
-  var s = document.getElementById("s-summa").value;
-  s = parseFloat(s);
+  var summaVklada = document.getElementById("s-summa").value;
+  summaVklada = parseFloat(summaVklada);
 
-  var t = document.getElementById("srok-time").value;
-  t = parseInt(t);
+  var srok = document.getElementById("srok-time").value;
+  srok = parseInt(srok);
 
-  var dohod = s * ((proc / (12 * 100)) * t);
-  
-  var nalog = document.querySelector("input[name=uchet]:checked");
-  
-  if (nalog != null && calcNalog == "1") {
-    nalog = nalog.value;
-    nalog = parseFloat(nalog);
-    nalog = nalog * dohod;
-    dohod = dohod - nalog;
+  if (srok <= 1 || srok >= 120) {
+    return;
   }
 
-  dohod = dohod + s;
+  var monthReplen = document.getElementById("input-month-replenishment").value;
+  monthReplen = parseFloat(monthReplen);
 
-  if (!isNaN(s) && !isNaN(dohod)) {
-    document.getElementById("out-vklad").innerHTML = s + " грн";
-    document.getElementById("out-poluchil").innerHTML = dohod + " грн";
+  var dohod = 0;
+
+  if (!isNaN(monthReplen)) {
+    for (var i = 0; i < srok; i++) {
+      summaVklada += monthReplen;
+      dohod += summaVklada * (proc / (12 * 100));
+    }
+  } else {
+    dohod = summaVklada * ((proc / (12 * 100)) * srok);
   }
-}  
 
+  var nalogElem = document.querySelector("input[name=uchet]:checked");
+
+  if (nalogElem != null && calcNalog == "1") {
+    var nalogKoef = parseFloat(nalogElem.value);
+    var nalogSum = dohod * nalogKoef;
+    dohod -= nalogSum;
+  }
+
+  if (!isNaN(summaVklada) && !isNaN(dohod)) {
+    document.getElementById("out-vklad").innerHTML = summaVklada + " грн";
+    document.getElementById("out-poluchil").innerHTML = dohod + summaVklada + " грн";
+  }
+}
