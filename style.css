@@ -36,13 +36,13 @@ input[type="number"] {
 
 div.srok,
 div.summa,
-div.mounth-replenishment {
+div.month-replenishment {
   padding-bottom: 5px;
 }
 
 div.srok label,
 div.summa label,
-div.mounth-replenishment label {
+div.month-replenishment label {
   display: block;
   float: left;
   width: 180px;
