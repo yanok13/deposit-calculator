@@ -30,7 +30,7 @@ function calc() {
   var nalogElem = document.querySelector("input[name=uchet]:checked");
 
   if (nalogElem != null && calcNalog == "1") {
-    var nalogKoef = parseFloat(nalog.value);
+    var nalogKoef = parseFloat(nalogElem.value);
     var nalogSum = dohod * nalogKoef;
     dohod -= nalogSum;
   }
