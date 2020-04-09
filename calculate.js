@@ -27,11 +27,11 @@ function calc() {
     dohod = summaVklada * ((proc / (12 * 100)) * srok);
   }
 
-  var nalogElem = document.querySelector("input[name=uchet]:checked");
+  const nalogElem = document.querySelector("input[name=uchet]:checked");
 
   if (nalogElem != null && calcNalog == "1") {
-    var nalogKoef = parseFloat(nalogElem.value);
-    var nalogSum = dohod * nalogKoef;
+    const nalogKoef = parseFloat(nalogElem.value);
+    const nalogSum = dohod * nalogKoef;
     dohod -= nalogSum;
   }
 
