@@ -1,7 +1,7 @@
 function calc() {
-  var checkProcElem = document.querySelector("input[name=stavka]:checked");
-  var proc = parseInt(checkProcElem.value);
-  var calcNalog = checkProcElem.dataset.calcNalog;
+  const checkProcElem = document.querySelector("input[name=stavka]:checked");
+  const proc = parseInt(checkProcElem.value);
+  const calcNalog = checkProcElem.dataset.calcNalog;
 
   var summaVklada = document.getElementById("s-summa").value;
   summaVklada = parseFloat(summaVklada);
